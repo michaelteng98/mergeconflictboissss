@@ -5,11 +5,13 @@
 
         public Person(String firstName, String lastName)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
+            this.setFirstName = (firstName);
+            this.setLastName = (lastName);
         }
 
-        public void SetFirstName(String firstName)
+        public void SetFirstName(String firstName) throws IllegalArgumentException {
+	if (firstName.isEmpty())
+		throw new IllegalArgumentException("Cant pass empty first name");
         {
             this.firstName = firstName;
         }
@@ -19,6 +21,4 @@
             this.lastName = lastName;
         }
     }
-}
-
 
